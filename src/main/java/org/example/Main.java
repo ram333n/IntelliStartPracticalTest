@@ -4,6 +4,7 @@ package org.example;
 import org.example.exceptions.NotEnoughMoneyException;
 import org.example.exceptions.RecordNotFoundException;
 
+import java.math.BigDecimal;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -68,19 +69,42 @@ public class Main {
                     }
 
                     case 5 -> {
-                        //TODO : add ability to add user
+                        System.out.print("Enter first name, last name and money amount : ");
+                        String firstName = scanner.next();
+                        String lastName = scanner.next();
+                        BigDecimal moneyAmount = scanner.nextBigDecimal();
+                        db.addUser(firstName, lastName, moneyAmount);
+                        System.out.println("Successfully added");
                     }
 
                     case 6 -> {
-                        //TODO : add ability to add product
+                        System.out.print("Enter name and price : ");
+                        String name = scanner.next();
+                        BigDecimal price = scanner.nextBigDecimal();
+                        db.addProduct(name, price);
+                        System.out.println("Successfully added");
                     }
 
                     case 7 -> {
-                        //TODO : add ability to delete user
+                        System.out.print("Enter user id : ");
+                        Long userId = scanner.nextLong();
+
+                        if(db.deleteUser(userId)) {
+                            System.out.println("Successfully deleted");
+                        } else {
+                            notifyAboutProblem("User with id : " + userId + " not found");
+                        }
                     }
 
                     case 8 -> {
-                        //TODO : add ability to delete product
+                        System.out.print("Enter product id : ");
+                        Long productId = scanner.nextLong();
+
+                        if(db.deleteProduct(productId)) {
+                            System.out.println("Successfully deleted");
+                        } else {
+                            notifyAboutProblem("Product with id : " + productId + " not found");
+                        }
                     }
 
                     case 9 -> {
@@ -92,11 +116,10 @@ public class Main {
                         notifyAboutProblem("Incorrect input");
                     }
 
-
                 }
             } catch (InputMismatchException exception) {
                 notifyAboutProblem("Incorrect input");
-            } catch (RecordNotFoundException | NotEnoughMoneyException exception) {
+            } catch (RecordNotFoundException | NotEnoughMoneyException | IllegalArgumentException exception) {
                 notifyAboutProblem(exception.getMessage());
             }
 
