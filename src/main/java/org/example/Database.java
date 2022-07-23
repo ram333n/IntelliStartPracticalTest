@@ -64,18 +64,27 @@ public class Database {
         currentProductPurchasers.add(userId);
     }
 
-    public void printUserPurchases(Long userId) {
-        for(Long productId : usersPurchases.get(userId)) {
-            System.out.println(productsStorage.get(productId));
-            System.out.println("----------------------------");
+    public void printUserPurchases(Long userId) throws RecordNotFoundException {
+        LinkedList<Long> currentUserPurchases = usersPurchases.get(userId);
+        if(currentUserPurchases != null) {
+            for(Long productId : usersPurchases.get(userId)) {
+                System.out.println(productsStorage.get(productId));
+                System.out.println("----------------------------");
+            }
+        } else {
+            throw new RecordNotFoundException("There isn't user with id : " + userId + " in database");
         }
-
     }
 
-    public void printProductPurchasers(Long productId) {
-        for(Long userId : productsPurchasers.get(productId)) {
-            System.out.println(usersStorage.get(userId));
-            System.out.println("----------------------------");
+    public void printProductPurchasers(Long productId) throws RecordNotFoundException {
+        HashSet<Long> currentProductPurchasers = productsPurchasers.get(productId);
+        if(currentProductPurchasers != null) {
+            for(Long userId : currentProductPurchasers) {
+                System.out.println(usersStorage.get(userId));
+                System.out.println("----------------------------");
+            }
+        } else {
+            throw new RecordNotFoundException("There isn't product with id : " + productId + " in database");
         }
     }
 

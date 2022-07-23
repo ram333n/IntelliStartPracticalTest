@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4a0c58a-5991-4168-8e7f-00d27857fcd4" name="Changes" comment="Added first implementations of modifying operations">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="c4a0c58a-5991-4168-8e7f-00d27857fcd4" name="Changes" comment="Fixed bugs with NPE in modifying methods of Database">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Database.java" afterDir="false" />
     </list>
@@ -81,7 +80,8 @@
       <workItem from="1658480503608" duration="21410000" />
       <workItem from="1658504627742" duration="5000" />
       <workItem from="1658519187165" duration="9501000" />
-      <workItem from="1658567353032" duration="3008000" />
+      <workItem from="1658567353032" duration="3157000" />
+      <workItem from="1658583181836" duration="2961000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1658480813609</created>
@@ -104,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658528103379</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fixed bugs with NPE in modifying methods of Database">
+      <created>1658570516782</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1658570516782</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,6 +133,7 @@
     <MESSAGE value="Added basic requirements implementations" />
     <MESSAGE value="Added first implementations of modifying operations" />
     <MESSAGE value="Fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed" />
+    <MESSAGE value="Fixed bugs with NPE in modifying methods of Database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bugs with NPE in modifying methods of Database" />
   </component>
 </project>
