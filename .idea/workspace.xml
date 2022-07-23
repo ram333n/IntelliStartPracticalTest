@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4a0c58a-5991-4168-8e7f-00d27857fcd4" name="Changes" comment="Added basic requirements implementations">
+    <list default="true" id="c4a0c58a-5991-4168-8e7f-00d27857fcd4" name="Changes" comment="Added first implementations of modifying operations">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +80,8 @@
       <updated>1658480502263</updated>
       <workItem from="1658480503608" duration="21410000" />
       <workItem from="1658504627742" duration="5000" />
-      <workItem from="1658519187165" duration="8742000" />
+      <workItem from="1658519187165" duration="9501000" />
+      <workItem from="1658567353032" duration="3008000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1658480813609</created>
@@ -96,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658502308576</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added first implementations of modifying operations">
+      <created>1658528103379</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1658528103379</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +124,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Added basic requirements implementations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added basic requirements implementations" />
+    <MESSAGE value="Added first implementations of modifying operations" />
+    <MESSAGE value="Fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed" />
   </component>
 </project>

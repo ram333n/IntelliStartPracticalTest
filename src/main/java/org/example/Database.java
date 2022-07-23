@@ -7,10 +7,10 @@ import java.math.BigDecimal;
 import java.util.*;
 
 public class Database {
-    private HashMap<Long, Product> productsStorage; //TODO : use LinkedHashMap to save order
-    private HashMap<Long, User> usersStorage;
-    private HashMap<Long, LinkedList<Long>> usersPurchases;
-    private HashMap<Long, HashSet<Long>> productsPurchasers;
+    private final HashMap<Long, Product> productsStorage;
+    private final HashMap<Long, User> usersStorage;
+    private final HashMap<Long, LinkedList<Long>> usersPurchases;
+    private final HashMap<Long, HashSet<Long>> productsPurchasers;
     private Long productIdGenerator;
     private Long userIdGenerator;
 
@@ -60,15 +60,7 @@ public class Database {
         LinkedList<Long> currentUserPurchases = usersPurchases.get(userId);
         HashSet<Long> currentProductPurchasers = productsPurchasers.get(productId);
 
-        //TODO : fix NPE, rewriting this block
-        if(currentUserPurchases == null) {
-            currentUserPurchases = usersPurchases.put(userId, new LinkedList<>());
-        }
         currentUserPurchases.add(productId);
-
-        if(currentProductPurchasers == null) {
-            currentProductPurchasers = productsPurchasers.put(productId, new HashSet<>());
-        }
         currentProductPurchasers.add(userId);
     }
 
@@ -95,6 +87,7 @@ public class Database {
 
         User toAdd = new User(firstName, lastName, moneyAmount);
         usersStorage.put(userIdGenerator, toAdd);
+        usersPurchases.put(userIdGenerator, new LinkedList<>());
         userIdGenerator++;
     }
 
@@ -105,6 +98,7 @@ public class Database {
 
         Product toAdd = new Product(name, price);
         productsStorage.put(productIdGenerator, toAdd);
+        productsPurchasers.put(productIdGenerator, new HashSet<>());
         productIdGenerator++;
     }
 
@@ -153,7 +147,7 @@ public class Database {
 
     private void checkMoneyAmount(BigDecimal moneyAmount) throws IllegalArgumentException {
         if(moneyAmount.compareTo(BigDecimal.valueOf(0)) == -1) {
-            throw new IllegalArgumentException("Money amount must be greater than 0");
+            throw new IllegalArgumentException("Money amount must be greater or equal than 0");
         }
     }
 
